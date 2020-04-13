@@ -4,7 +4,12 @@ node_js:
 branches:
   only:
   - master
+before_script:
+    - npm run buildProd
+before_deploy:
+    - cd dist
 deploy:
+    skip_cleanup: true
     provider: elasticbeanstalk
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_KEY
