@@ -13,6 +13,8 @@ jobs:
     - stage: deploy
 deploy:
     provider: elasticbeanstalk
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_KEY
     region: "us-west-2"
     app: "bluesEnElBalcon"
     env: "Bluesenelbalcon-env"
