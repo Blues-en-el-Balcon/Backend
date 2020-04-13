@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+    - "stable"
+branches:
+  only:
+  - master
+install:
+- npm i
+jobs:
+  include:
+    - stage: test
+      script: "npm run test"
+    - stage: deploy
+deploy:
+    provider: elasticbeanstalk
+    region: "us-west-2"
+    app: "bluesEnElBalcon"
+    env: "Bluesenelbalcon-env"
+    bucket_name: "the-target-S3-bucket"
