@@ -4,13 +4,6 @@ node_js:
 branches:
   only:
   - master
-install:
-- npm i
-jobs:
-  include:
-    - stage: test
-      script: "npm run test"
-    - stage: deploy
 deploy:
     provider: elasticbeanstalk
     access_key_id: $AWS_ACCESS_KEY_ID
