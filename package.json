@@ -1,0 +1,22 @@
+{
+  "name": "blues_en_el_balcon_webpage_backend",
+  "version": "0.0.1",
+  "description": "this project contains the backend of the webpage",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blues-en-el-Balcon/Backend.git"
+  },
+  "author": "Alejo López Juan Pablo Hernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Blues-en-el-Balcon/Backend/issues"
+  },
+  "homepage": "https://github.com/Blues-en-el-Balcon/Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
