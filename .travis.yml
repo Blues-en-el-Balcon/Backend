@@ -4,6 +4,10 @@ node_js:
 branches:
   only:
   - master
+before_deploy:
+    - cp package.json ./dist
+    - cp package-lock.json ./dist
+    - cd dist
 deploy:
     skip_cleanup: true
     provider: elasticbeanstalk
