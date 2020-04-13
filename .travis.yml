@@ -18,4 +18,4 @@ deploy:
     region: "us-west-2"
     app: "bluesEnElBalcon"
     env: "Bluesenelbalcon-env"
-    bucket_name: "the-target-S3-bucket"
+    bucket_name: $BUCKET_NAME
