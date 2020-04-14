@@ -1,17 +1,14 @@
+notifications:
+  email: false
 os:
   - linux
 dist: bionic
 language: node_js
 node_js:
-    - "stable"
-branches:
-  only:
-  - master
+    - "lts/*"
 script:	
   - npm run build
-  - zip -r $FILE_NAME server.js package.json
 deploy:
-  skip_cleanup: true
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_KEY
@@ -19,4 +16,6 @@ deploy:
   app: "bluesEnElBalcon"	   
   env: "Bluesenelbalcon-env"
   bucket: $bucket
-  file: $FILE_NAME
+  edge: true
+  on:
+    branch: master
