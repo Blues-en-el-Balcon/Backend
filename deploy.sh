@@ -17,6 +17,8 @@ else
 fi
 
 npm run buildProd
+cp -r ../.elasticbeanstalk .
+cp -r ../.ebextensions .
 cd dist
 
 EB_ENV="$EB_APP-$NODE_ENV"
