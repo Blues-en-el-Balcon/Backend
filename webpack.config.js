@@ -3,19 +3,12 @@ const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 module.exports = (env, argv) => {
-  const SERVER_PATH = (argv.mode === 'production') ?
-    './src/server/server-prod.js' :
-    './src/server/server-dev.js' 
-  const OUTPUT_PATH = (argv.mode === 'production') ?
-     __dirname :
-     path.join(__dirname, "dist")
-  
 return ({
     entry: {
-      server: SERVER_PATH,
+      server: './src/server.js' ,
     },
     output: {
-      path: OUTPUT_PATH,
+      path: __dirname,
       publicPath: '/',
       filename: '[name].js'
     },
