@@ -18,4 +18,4 @@ deploy:
   bucket: $bucket
   edge: true
   on:
-    branch: master
+    branch: production
