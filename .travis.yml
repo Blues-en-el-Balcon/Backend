@@ -1,18 +1,23 @@
+os: linux
+dist: bionic
 language: node_js
 node_js:
     - "stable"
 branches:
   only:
   - master
+addons:
+  artifacts: true
+    s3_region: us-west-2
+    paths:
+    - $(git ls-files -o | tr "\n" ":")
 before_deploy:	
   - npm run build
 deploy:
-  skip_cleanup: true
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_KEY
   region: "us-west-2"	    
   app: "bluesEnElBalcon"	   
   env: "Bluesenelbalcon-env"
-  bucket_name: $BUCKET_NAME
-  
+  bucket_name: $bucket
