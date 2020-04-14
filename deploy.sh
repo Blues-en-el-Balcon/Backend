@@ -22,10 +22,9 @@ cd dist
 EB_ENV="$EB_APP-$NODE_ENV"
 echo "Deploying to $EB_ENV"
 
-sudo apt-get install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
-git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
-./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
-rm -rf aws-elastic-beanstalk-cli-setup
+pip install --upgrade pip
+pip install -U pyopenssl
+pip install --user --upgrade awsebcli
 
 # Configure AWS credentials for Elastic Beanstalk
 mkdir -p ~/.aws

@@ -4,6 +4,6 @@ node_js:
 branches:
   only:
   - master
-after_success:
+script:
 - chmod +x ./deploy.sh
 - "./deploy.sh"
