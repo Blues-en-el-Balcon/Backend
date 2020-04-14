@@ -7,10 +7,12 @@ branches:
 before_deploy:	
   - npm run build
 deploy:
-    provider: elasticbeanstalk
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_KEY
-    region: "us-west-2"	    
-    app: "bluesEnElBalcon"	   
-    env: "Bluesenelbalcon-env"
-    bucket_name: $BUCKET_NAME
+  skip_cleanup: true
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_KEY
+  region: "us-west-2"	    
+  app: "bluesEnElBalcon"	   
+  env: "Bluesenelbalcon-env"
+  bucket_name: $BUCKET_NAME
+  
