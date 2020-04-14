@@ -22,8 +22,8 @@ cd dist
 EB_ENV="$EB_APP-$NODE_ENV"
 echo "Deploying to $EB_ENV"
 
-pip install --upgrade pip
-pip install -U pyopenssl
+pip install --upgrade pip --user
+pip install -U pyopenssl --user
 pip install --user --upgrade awsebcli
 
 # Configure AWS credentials for Elastic Beanstalk
