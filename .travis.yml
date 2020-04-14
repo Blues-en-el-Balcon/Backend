@@ -12,14 +12,16 @@ jobs:
       script: npm run build
     - stage: test
       script: npm run test
-deploy:
-  provider: elasticbeanstalk
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_KEY
-  region: "us-west-2"	    
-  app: "bluesEnElBalcon"	   
-  env: "Bluesenelbalcon-env"
-  bucket: $bucket
-  edge: true
-  on:
-    branch: master
+    - stage: deploy
+      script: skip
+      deploy:
+        provider: elasticbeanstalk
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_KEY
+        region: "us-west-2"	    
+        app: "bluesEnElBalcon"	   
+        env: "Bluesenelbalcon-env"
+        bucket: $bucket
+        edge: true
+        on:
+          branch: master
