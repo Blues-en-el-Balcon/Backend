@@ -4,10 +4,6 @@ EB_APP="bluesEnElBalcon"
 STAGING_BRANCH="master"
 PRODUCTION_BRANCH="production"
 
-# Make the production build
-
-
-
 # Determine the environment to deploy to based on which branch this commit is on
 NODE_ENV=''
 if [[ $TRAVIS_BRANCH == $STAGING_BRANCH ]]; then
@@ -26,7 +22,10 @@ cd dist
 EB_ENV="$EB_APP-$NODE_ENV"
 echo "Deploying to $EB_ENV"
 
-pip install --user --upgrade awsebcli
+sudo apt-get install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
+git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
+rm -rf aws-elastic-beanstalk-cli-setup
 
 # Configure AWS credentials for Elastic Beanstalk
 mkdir -p ~/.aws
