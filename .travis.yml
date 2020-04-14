@@ -6,9 +6,12 @@ dist: bionic
 language: node_js
 node_js:
     - "lts/*"
-script:	
-  - npm run build
-  - npm run test
+jobs:
+  include:
+    - stage: build
+      script: npm run build
+    - test: test
+      script: npm run test
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY_ID
