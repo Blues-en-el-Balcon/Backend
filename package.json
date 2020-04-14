@@ -4,9 +4,9 @@
   "description": "backend of Blues en el Balcón website",
   "main": "server.js",
   "scripts": {
-    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
-    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js && cp package.json ./dist && cp package-lock.json ./dist",
-    "start": "node ./server.js",
+    "build": "rm -rf dist && webpack --mode production --config webpack.config.js",
+    "build-dev": "rm -rf dist && webpack --mode development --config webpack.config.js",
+    "start": "node server.js",
     "lint": "eslint --ext js src",
     "test": "jest"
   },
