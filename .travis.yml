@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: build
       script: npm run build
-    - test: test
+    - stage: test
       script: npm run test
 deploy:
   provider: elasticbeanstalk
