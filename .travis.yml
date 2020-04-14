@@ -1,8 +1,6 @@
 os:
   - linux
 dist: bionic
-env:
-  - FILE_NAME=blueEnElBalconWebsite-$(date +'%Y%m%d%H%M%S').zip
 language: node_js
 node_js:
     - "stable"
